@@ -11,17 +11,17 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 30% 20%, #111215 0%, #060608 80%);
-      color: #f5f5f5;
-      line-height: 1.7;
+      background: radial-gradient(circle at 30% 20%, #0c0c0e 0%, #060607 80%);
+      color: #f0f0f0;
       overflow-x: hidden;
+      line-height: 1.7;
     }
 
     header {
       position: relative;
       text-align: center;
-      padding: 7rem 1rem 5rem;
-      background: linear-gradient(180deg, rgba(25,25,28,0.95), rgba(10,10,12,0.9));
+      padding: 8rem 1rem 5rem;
+      background: linear-gradient(180deg,#101012 0%,#08080a 100%);
       overflow: hidden;
     }
 
@@ -30,24 +30,24 @@
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: radial-gradient(circle at 50% 10%, rgba(82,201,242,0.15), transparent 70%);
-      animation: pulse 6s ease-in-out infinite alternate;
+      animation: aurora 7s ease-in-out infinite alternate;
       z-index: 0;
     }
 
-    @keyframes pulse {
+    @keyframes aurora {
       from { opacity: 0.3; transform: scale(1); }
       to { opacity: 0.7; transform: scale(1.05); }
     }
 
     header h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.8rem;
-      letter-spacing: 1px;
+      font-size: 3rem;
       font-weight: 700;
+      letter-spacing: 1px;
       color: #fff;
-      position: relative;
       z-index: 1;
-      text-shadow: 0 0 12px rgba(82,201,242,0.3);
+      position: relative;
+      text-shadow: 0 0 14px rgba(82,201,242,0.4);
     }
 
     header p {
@@ -61,68 +61,79 @@
     section {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 4rem 1.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    section h2 {
+    h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.6rem;
       font-weight: 600;
-      letter-spacing: .5px;
-      margin-bottom: 1.5rem;
       color: #52c9f2;
+      margin-bottom: 1.5rem;
+      letter-spacing: .5px;
       text-transform: uppercase;
     }
 
-    p, li { color: #dcdcdc; }
+    p, li { color: #ddd; }
     p { margin-bottom: 1rem; }
     ul { margin-left: 1.2rem; }
     a { color: #6dd6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+    /* HERO ENTERTAINMENT SECTION */
+    .entertainment-hero {
+      background: radial-gradient(circle at 50% 0%, rgba(82,201,242,0.15), transparent 70%);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
     }
 
-    .card {
-      background: linear-gradient(145deg, #151518, #0f0f11);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      transition: all .4s ease;
-      box-shadow: 0 0 0 rgba(82,201,242,0);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(82,201,242,0.07), transparent 70%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .card:hover::before { opacity: 1; }
-    .card:hover {
-      border-color: #52c9f2;
-      box-shadow: 0 0 20px rgba(82,201,242,0.25);
-      transform: translateY(-3px);
-    }
-
-    .card h3 {
+    .entertainment-hero h2 {
       color: #fff;
-      font-size: 1.2rem;
-      margin-bottom: .5rem;
-      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 15px rgba(82,201,242,0.4);
     }
 
-    .small { font-size: 0.9rem; color: #aaa; }
+    .lineup {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .artist {
+      background: linear-gradient(145deg, #141417, #0f0f11);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 1.8rem 1.2rem;
+      width: 100%;
+      transition: all .3s ease;
+      box-shadow: 0 0 0 rgba(82,201,242,0);
+    }
+
+    .artist:hover {
+      transform: translateY(-4px);
+      border-color: #52c9f2;
+      box-shadow: 0 0 18px rgba(82,201,242,0.25);
+    }
+
+    .artist h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: .4rem;
+    }
+
+    .artist p { font-size: 0.95rem; color: #ccc; }
+
+    .visuals {
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 2rem;
+    }
 
     .cta {
       text-align: center;
@@ -147,17 +158,28 @@
       transform: scale(1.05);
     }
 
-    .grid2 {
+    .packages {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
-    @media(max-width:700px){
-      .grid2 { grid-template-columns: 1fr; }
-      header h1 { font-size: 2rem; }
+    .card {
+      background: linear-gradient(145deg, #151518, #0f0f11);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      transition: all .4s ease;
     }
+
+    .card:hover {
+      border-color: #52c9f2;
+      box-shadow: 0 0 20px rgba(82,201,242,0.25);
+      transform: translateY(-3px);
+    }
+
+    .small { font-size: 0.9rem; color: #aaa; }
 
     footer {
       text-align: center;
@@ -165,37 +187,66 @@
       background: #080809;
       font-size: 0.9rem;
       color: #888;
-      letter-spacing: 0.4px;
     }
 
-    footer p span {
-      color: #52c9f2;
-    }
+    footer span { color: #52c9f2; }
 
-    /* Subtle divider glow between sections */
-    section::after {
-      content: "";
-      display: block;
-      width: 80%;
-      height: 1px;
-      margin: 2rem auto 0;
-      background: linear-gradient(90deg, transparent, rgba(82,201,242,0.4), transparent);
+    @media(max-width:700px){
+      header h1 { font-size: 2.2rem; }
+      .lineup { grid-template-columns: 1fr; }
     }
-
   </style>
 </head>
 <body>
 
 <header>
   <h1>SENSAI Closing Event — Unite Week Creator Mixer</h1>
-  <p>Tuesday, November 18, 2025 · 20:00–02:00<br>La Textil Collective / 303 Audiophile Bar · Carrer de Casp, 33B, Eixample · Barcelona</p>
+  <p>Tuesday, November 18, 2025 · 20:00–02:00 · La Textil Collective / 303 Audiophile Bar · Carrer de Casp, 33B, Eixample · Barcelona</p>
 </header>
+
+<!-- ENTERTAINMENT FIRST -->
+<section class="entertainment-hero" id="entertainment">
+  <h2>Live Performances · DJs · XR Art</h2>
+
+  <div class="lineup">
+    <div class="artist">
+      <h3>Gantasmo</h3>
+      <p>Opening & Closing DJ — Eclectic high-energy sets shaping the night’s pulse.</p>
+    </div>
+    <div class="artist">
+      <h3>Nina Vondi</h3>
+      <p>Experimental grooves & melodic depth from one of Barcelona’s underground gems.</p>
+    </div>
+    <div class="artist">
+      <h3>Lola & Delfi</h3>
+      <p>Back-to-back sonic alchemists · Pure Eixample underground magic.</p>
+    </div>
+    <div class="artist">
+      <h3>Ailin Bars</h3>
+      <p>Live flute + electronics · 15’ performance bridging organic and digital resonance.</p>
+    </div>
+  </div>
+
+  <div class="visuals">
+    <h3>Visuals — KYSS</h3>
+    <p>Barcelona VJ (Input, Sala Apolo) — synesthetic lightscapes and motion-reactive layers.</p>
+  </div>
+
+  <div class="cta">
+    <a class="button" href="https://app.swapcard.com/event/newimages-festival-2025/exhibitor/RXhoaWJpdG9yXzIxNjcyMzQ=" target="_blank">View “Love Vibes” XR Installation →</a>
+  </div>
+
+  <p style="margin-top:2rem; color:#ccc; font-size:0.95rem;">
+    <strong>Love Vibes — Multiuser XR Installation:</strong> AI × Dance × AR · Hand-Tracking · Quest 2/3 · 10-minute cycles.<br>
+    Lead Artists: Daniel González-Franco & Cathline Smoos · Producer: Henrik Arne Sprengel / Espronceda Institute of Art & Culture (Spain)
+  </p>
+</section>
 
 <section id="overview">
   <h2>Overview</h2>
-  <p><strong>What:</strong> A high-signal night for Unity, XR, and AI creators in Barcelona — immersive sound, luminous visuals, and a curated sponsor showcase.</p>
-  <p><strong>Sponsor benefit:</strong> <b>LED screen logo loop only</b> (no booths or demos) + MC thank-you + social posts. Clean, elegant visibility.</p>
-  <p><strong>Audience:</strong> 250–400 creators, studios, researchers, and global partners converging for Unite Week & SensAI Hack.</p>
+  <p><strong>What:</strong> A high-signal pre-Unite night for Unity, XR, and AI creators in Barcelona, with premium sound and a clean sponsor format.</p>
+  <p><strong>On-site sponsor benefit:</strong> <strong>LED screen logo loop only</strong> (no booths or demos) + MC thank-you + social posts.</p>
+  <p><strong>Audience:</strong> 250–400 creators, studios, researchers, and partners arriving for Unite Week & SensAI Hack.</p>
   <div class="cta"><a class="button" href="https://sensaihack.com/barcelona/" target="_blank">Visit sensaihack.com</a></div>
 </section>
 
@@ -204,8 +255,48 @@
   <div class="packages">
     <div class="card">
       <h3>Headliner — 10 000 €</h3>
-      <p>“Presented by” lockup; large logo intro & outro card; every LED loop cycle.</p>
-      <p class="small">MC headline thanks · 10 VIP entries · 2 IG posts + 1 reel + LinkedIn/X feature</p>
+      <p>“Presented by” lockup; large logo at loop start & end card; appears every cycle.</p>
+      <p class="small">MC headline thanks · 10 VIP entries · 2 IG posts + 1 reel + LinkedIn/X</p>
     </div>
     <div class="card">
-      <h3>Partner — 5
+      <h3>Partner — 5 000 €</h3>
+      <p>Medium logo every loop (mid-pack).</p>
+      <p class="small">MC group thanks · 6 VIP entries · 1 social post + stories</p>
+    </div>
+    <div class="card">
+      <h3>Supporter — 2 000 €</h3>
+      <p>Small logo in rotating LED loop.</p>
+      <p class="small">MC group thanks · 2 VIP entries · recap inclusion</p>
+    </div>
+  </div>
+  <p class="small"><strong>LED Specs:</strong> SVG (preferred) or high-res PNG (transparent + white). Safe area 80%. Animated fades (no video). Loop order: Headliner → Partners → Supporters. Per 8-min loop: Headliner ~15s×2 · Partner ~8s · Supporter ~5s. Assets due <b>Nov 10</b>.</p>
+</section>
+
+<section id="schedule">
+  <h2>Run of Show</h2>
+  <ul>
+    <li>20:00–21:00   Opening DJ — Gantasmo</li>
+    <li>21:00–21:15   Welcome + Sponsor Thanks (MC / Henrik remarks)</li>
+    <li>21:15–21:30   Ailin Bars (live flute + electronics)</li>
+    <li>21:30–22:15   Nina Vondi</li>
+    <li>22:15–23:00   Lola & Delfi</li>
+    <li>23:00–23:10   LED Sponsor Loop + MC Shout</li>
+    <li>23:10–02:00   Closing DJ — Gantasmo / B2B</li>
+  </ul>
+  <p class="small">All night: KYSS (VJ) + Love Vibes XR Installation</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><strong>Kris Pilcher</strong> — Event Coordinator<br/>
+  📧 <a href="mailto:kris@example.com">kris@example.com</a> · 📞 +34 600 000 000</p>
+  <p><strong>Links:</strong> <a href="https://sensaihack.com/barcelona/" target="_blank">sensaihack.com/barcelona</a> · <a href="https://unity.com/events/unite" target="_blank">unity.com/events/unite</a></p>
+  <p><strong>Venue:</strong> La Textil Collective / 303 Audiophile Bar · Carrer de Casp 33B · Eixample · 08010 Barcelona</p>
+</section>
+
+<footer>
+  <p>© 2025 <span>SENSAI</span> / Espronceda Institute of Art & Culture · Design by <span>Kris Pilcher</span></p>
+</footer>
+
+</body>
+</html>
