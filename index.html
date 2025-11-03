@@ -20,18 +20,29 @@
     header {
       position: relative;
       text-align: center;
-      padding: 8rem 1rem 5rem;
+      padding: 10rem 1rem 7rem;
       background: linear-gradient(180deg,#101012 0%,#08080a 100%);
       overflow: hidden;
+    }
+
+    /* HERO BACKGROUND IMAGE */
+    header::before {
+      content: "";
+      background: url('images/sensai-hero.jpg') center/cover no-repeat;
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+      filter: brightness(0.6);
+      z-index: 0;
     }
 
     header::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      inset: 0;
       background: radial-gradient(circle at 50% 10%, rgba(82,201,242,0.15), transparent 70%);
       animation: aurora 7s ease-in-out infinite alternate;
-      z-index: 0;
+      z-index: 1;
     }
 
     @keyframes aurora {
@@ -45,17 +56,17 @@
       font-weight: 700;
       letter-spacing: 1px;
       color: #fff;
-      z-index: 1;
+      z-index: 2;
       position: relative;
       text-shadow: 0 0 14px rgba(82,201,242,0.4);
     }
 
     header p {
       font-size: 1rem;
-      color: #aaa;
+      color: #ccc;
       margin-top: 1rem;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     section {
@@ -129,6 +140,19 @@
 
     .artist p { font-size: 0.95rem; color: #ccc; }
 
+    /* ARTIST IMAGE */
+    .artist img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .artist img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(82,201,242,0.3);
+    }
+
     .visuals {
       margin-top: 3rem;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -151,6 +175,26 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       border: 0;
+    }
+
+    /* Event Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px rgba(82,201,242,0.2);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 25px rgba(82,201,242,0.35);
     }
 
     .cta {
@@ -222,24 +266,29 @@
   <p>Tuesday, November 18, 2025 · 20:00–02:00 · La Textil Collective / 303 Audiophile Bar · Carrer de Casp, 33B, Eixample · Barcelona</p>
 </header>
 
-<!-- ENTERTAINMENT FIRST -->
+<!-- ENTERTAINMENT -->
 <section class="entertainment-hero" id="entertainment">
   <h2>Live Performances · DJs · XR Art</h2>
 
   <div class="lineup">
     <div class="artist">
+      <!-- PLACE ARTIST IMAGE -->
+      <img src="images/gantasmo.jpg" alt="Gantasmo DJ">
       <h3>Gantasmo</h3>
       <p>Opening & Closing DJ — Eclectic high-energy sets shaping the night’s pulse.</p>
     </div>
     <div class="artist">
+      <img src="images/nina-vondi.jpg" alt="Nina Vondi DJ">
       <h3>Nina Vondi</h3>
       <p>Experimental grooves & melodic depth from one of Barcelona’s underground gems.</p>
     </div>
     <div class="artist">
+      <img src="images/lola-delfi.jpg" alt="Lola & Delfi DJs">
       <h3>Lola & Delfi</h3>
       <p>Back-to-back sonic alchemists · Pure Eixample underground magic.</p>
     </div>
     <div class="artist">
+      <img src="images/ailin-bars.jpg" alt="Ailin Bars performing live">
       <h3>Ailin Bars</h3>
       <p>Live flute + electronics · 15’ performance bridging organic and digital resonance.</p>
     </div>
@@ -261,6 +310,13 @@
 
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/jMgdRPe7VGQ" title="Love Vibes XR Installation" allowfullscreen></iframe>
+  </div>
+
+  <!-- EVENT GALLERY SECTION -->
+  <div class="gallery">
+    <img src="images/lovevibes-installation.jpg" alt="Love Vibes installation">
+    <img src="images/303-audiophile.jpg" alt="303 Audiophile Bar interior">
+    <img src="images/audience.jpg" alt="Event audience and visuals">
   </div>
 </section>
 
